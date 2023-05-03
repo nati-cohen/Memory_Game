@@ -68,6 +68,8 @@ function handleCardClick(e) {
       let card2 = openedCards[1];
       if (card1.querySelector(".img_face").src === card2.querySelector(".img_face").src) { // בדיקה האם הקלפים שווים
         openedCards = []; // במידה והקלפים שווים מאפסים את המערך
+        card1.removeEventListener('click',handleCardClick)
+        card2.removeEventListener('click',handleCardClick)
       } else {
         setTimeout(() => {  //פןנקציה שמורה במערכת שבמידה והקלפים לא שווים אז  משנה להם חזרה את הקלאס לדיפולט ונותנת לזה השהייה של 1000 מילי שנייה ולכן הקלף לא נסגר מייד
           card1.querySelector(".img_back").classList.toggle("card_img_none");
